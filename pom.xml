@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.junzixiehui</groupId>
+  <artifactId>java-think</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>java-think-thread</module>
+    <module>java-think-common</module>
+  </modules>
+  <name>java-think Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+
+  <properties>
+    <file_encoding>UTF-8</file_encoding>
+    <!-- jar包版本定义 -->
+    <guava.version>19.0</guava.version>
+    <!-- 租房研发部公共包 -->
+    <rent-common.version>5.5.8.1</rent-common.version>
+
+    <mysql-connector.version>5.1.38</mysql-connector.version>
+
+
+    <!-- Maven插件版本定义 apache-maven-3.3.3版本默认版本插件版本 -->
+    <maven_source_plugin_version>2.6</maven_source_plugin_version>
+    <maven_compiler_plugin_version>3.1</maven_compiler_plugin_version>
+    <maven_jar_plugin_version>2.4</maven_jar_plugin_version>
+    <maven_war_plugin_version>2.2</maven_war_plugin_version>
+    <maven_install_plugin_version>2.4</maven_install_plugin_version>
+    <maven_deploy_plugin_version>2.7</maven_deploy_plugin_version>
+    <maven-surefire-plugin_version>2.12.4</maven-surefire-plugin_version>
+    <elastic-job-spring_version>1.1.1</elastic-job-spring_version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- mqProxy -->
+      <dependency>
+        <groupId>com.ziroom.ferrari</groupId>
+        <artifactId>mqProxy</artifactId>
+        <version>1.0.2-SNAPSHOT</version>
+      </dependency>
+      <!-- 统一调用链 -->
+      <dependency>
+        <groupId>com.ziroom</groupId>
+        <artifactId>z-track</artifactId>
+        <version>1.1.2-RELEASE</version>
+      </dependency>
+      <!-- guava -->
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+      <!-- common-utils -->
+      <dependency>
+        <groupId>com.ziroom</groupId>
+        <artifactId>rent-common</artifactId>
+        <version>${rent-common.version}</version>
+      </dependency>
+      <!-- 通用业务补偿 -->
+      <dependency>
+        <groupId>com.ziroom</groupId>
+        <artifactId>bus-recoup</artifactId>
+        <version>4.5.2</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- mysql -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-connector.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.javassist</groupId>
+        <artifactId>javassist</artifactId>
+        <version>3.18.1-GA</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.rocketmq</groupId>
+        <artifactId>rocketmq-client</artifactId>
+        <version>3.4.6</version>
+      </dependency>
+      <!-- oracle驱动 -->
+      <dependency>
+        <groupId>ojdbc</groupId>
+        <artifactId>ojdbc</artifactId>
+        <version>14</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>3.11</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>3.11</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-all</artifactId>
+        <version>2.3.2</version>
+        <classifier>indy</classifier>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <build>
+    <finalName>java-think</finalName>
+  </build>
+</project>
