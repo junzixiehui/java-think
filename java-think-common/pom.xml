@@ -14,11 +14,18 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>com.junzixiehui</groupId>
+            <artifactId>junxie-common</artifactId>
+        </dependency>
 
         <dependency>
-            <groupId>com.ziroom</groupId>
-            <artifactId>rent-common</artifactId>
+            <groupId>com.cheng.application</groupId>
+            <artifactId>lib-all</artifactId>
         </dependency>
+
+
+
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>

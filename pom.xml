@@ -36,18 +36,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- mqProxy -->
-      <dependency>
-        <groupId>com.ziroom.ferrari</groupId>
-        <artifactId>mqProxy</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
-      </dependency>
-      <!-- 统一调用链 -->
-      <dependency>
-        <groupId>com.ziroom</groupId>
-        <artifactId>z-track</artifactId>
-        <version>1.1.2-RELEASE</version>
-      </dependency>
       <!-- guava -->
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -56,26 +44,17 @@
       </dependency>
       <!-- common-utils -->
       <dependency>
-        <groupId>com.ziroom</groupId>
-        <artifactId>rent-common</artifactId>
-        <version>${rent-common.version}</version>
+        <groupId>com.junzixiehui</groupId>
+        <artifactId>junxie-common</artifactId>
+        <version>1.0-SNAPSHOT</version>
       </dependency>
-      <!-- 通用业务补偿 -->
+
       <dependency>
-        <groupId>com.ziroom</groupId>
-        <artifactId>bus-recoup</artifactId>
-        <version>4.5.2</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-          </exclusion>
-        </exclusions>
+        <groupId>com.cheng.application</groupId>
+        <artifactId>lib-all</artifactId>
+        <version>1.0.1</version>
       </dependency>
+
 
       <!-- mysql -->
       <dependency>

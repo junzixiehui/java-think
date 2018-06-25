@@ -58,6 +58,8 @@ public class CountDownLatchSimpleTest {
         countDownLatchSimple.await();
         System.out.println("主线程继续执行");
 
+        System.out.println(countDownLatchSimple.getcount());
+
     }
 
 
@@ -74,7 +76,7 @@ public class CountDownLatchSimpleTest {
 
         public void run() {
             try {
-                int i =  random.nextInt(30);
+                int i =  random.nextInt(10);
                 System.out.println(threadName +" :子线程开始执行" + i);
                 Thread.sleep(i * 1000);
                 countDownLatchSimple.countDown();
