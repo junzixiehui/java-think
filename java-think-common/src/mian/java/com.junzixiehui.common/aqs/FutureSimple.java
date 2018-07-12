@@ -22,22 +22,18 @@ public class FutureSimple<V> implements Future<V>, Runnable {
     }
 
 
-    @Override
     public boolean cancel(boolean mayInterruptIfRunning) {
         return false;
     }
 
-    @Override
     public boolean isCancelled() {
         return false;
     }
 
-    @Override
     public boolean isDone() {
         return income != null;
     }
 
-    @Override
     public V get() throws InterruptedException, ExecutionException {
 
         for (;;){
@@ -50,12 +46,10 @@ public class FutureSimple<V> implements Future<V>, Runnable {
 
     }
 
-    @Override
     public V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
         return null;
     }
 
-    @Override
     public void run() {
 
         try {

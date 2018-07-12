@@ -70,10 +70,6 @@ public class FutureSimpleTest {
         if (futureTask1.isDone()){
             System.out.println("判断是否结束2");
         }
-        String s = null;
-        if (s.equals("")){
-
-		}
 
         executorService.shutdown();
 
@@ -88,7 +84,6 @@ public class FutureSimpleTest {
 
     static class Task  implements Callable<Integer> {
 
-        @Override
         public Integer call() throws Exception {
             System.out.println("Thread [" + Thread.currentThread().getName() + "] is running");
             int result = 0;
