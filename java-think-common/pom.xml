@@ -14,15 +14,7 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>com.junzixiehui</groupId>
-            <artifactId>junxie-common</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>com.cheng.application</groupId>
-            <artifactId>lib-all</artifactId>
-        </dependency>
 
 
 
