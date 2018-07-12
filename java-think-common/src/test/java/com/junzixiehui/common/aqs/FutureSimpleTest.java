@@ -75,14 +75,25 @@ public class FutureSimpleTest {
 
     }
 
+	@Test
+	public void cancel() {
 
 
+		System.out.println("2");
+	}
+
+	@Test
+	public void isCancelled() {
+		System.out.println("2");
+	}
+
+	@Test
+	public void get() {
+		System.out.println("2");
+	}
 
 
-
-
-
-    static class Task  implements Callable<Integer> {
+	static class Task  implements Callable<Integer> {
 
         public Integer call() throws Exception {
             System.out.println("Thread [" + Thread.currentThread().getName() + "] is running");
