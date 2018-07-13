@@ -8,6 +8,7 @@
   <modules>
     <module>java-think-thread</module>
     <module>java-think-common</module>
+      <module>interview</module>
   </modules>
   <name>java-think Maven Webapp</name>
   <url>http://maven.apache.org</url>
