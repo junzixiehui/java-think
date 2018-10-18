@@ -15,7 +15,10 @@
 
     <dependencies>
 
-
+        <dependency>
+            <groupId>com.vip.vjtools</groupId>
+            <artifactId>vjkit</artifactId>
+        </dependency>
 
 
         <dependency>

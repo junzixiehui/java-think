@@ -1,5 +1,6 @@
 package com.junzixiehui.common.lang;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 
@@ -28,6 +29,15 @@ public class IntegetSimpleTest {
         System.out.println(b);
 
     }
+
+
+	@Test
+	public void testCov() {
+
+    	IntegetSimple integetSimple = new IntegetSimple();
+    	int i = integetSimple.testCov();
+		Assert.assertEquals(1,i);
+	}
 
 
 }
