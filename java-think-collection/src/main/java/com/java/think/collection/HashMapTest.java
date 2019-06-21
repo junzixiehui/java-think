@@ -1,5 +1,7 @@
 package com.java.think.collection;
 
+import com.google.common.collect.Maps;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -18,7 +20,7 @@ public class HashMapTest {
 
 	public static void main(String[] args) {
 		
-		Map<String,Object> dataMap = new HashMap<>();
+		Map<String,Object> dataMap = Maps.newHashMap();
 
 		testMapLoop(dataMap);
 		Object v = dataMap.get("11");
@@ -26,7 +28,6 @@ public class HashMapTest {
 
 
 		System.out.println("*********"+v);
-		System.out.println("*********"+dataMap.getOrDefault("35","0"));
 	}
 
 
@@ -34,12 +35,12 @@ public class HashMapTest {
 	public static void testMapLoop(Map<String,Object> dataMap){
 
 		for (int j = 0;j< 10;j++) {
-			executorService.submit(() -> {
+			/*executorService.submit(() -> {
 				for (int i = 0; i < 1000; i++) {
 					dataMap.put(i + "", "==" + i);
 					System.out.println("================="+i);
 				}
-			});
+			});*/
 		}
 
 	}
