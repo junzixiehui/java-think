@@ -14,6 +14,7 @@
       <module>java-think-collection</module>
       <module>java-think-design</module>
       <module>java-think-jvm</module>
+      <module>java-think-flink</module>
   </modules>
   <name>java-think Maven Webapp</name>
   <url>http://maven.apache.org</url>
