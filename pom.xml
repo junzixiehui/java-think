@@ -13,6 +13,8 @@
       <module>algorithm</module>
       <module>java-think-collection</module>
       <module>java-think-design</module>
+      <module>java-think-io</module>
+      <module>agent</module>
   </modules>
   <name>java-think Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -145,6 +147,11 @@
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.0.5.RELEASE</version>
         </dependency>
 
 

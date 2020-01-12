@@ -9,24 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>java-think-thread</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>java-think-io</artifactId>
+
 
 
     <dependencies>
 
-
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.0.Final</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-        </dependency>
     </dependencies>
-
 
 
 </project>
