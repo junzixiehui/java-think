@@ -12,7 +12,7 @@ import javax.activation.MailcapCommandMap;
  */
 public class ReactorTest {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Flux.generate(sink -> {
 			sink.next("hello");
 			sink.complete();
@@ -20,6 +20,6 @@ public class ReactorTest {
 
 
 
-	}
+	}*/
 
 }

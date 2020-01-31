@@ -1,4 +1,4 @@
-package com.junzixiehui.common.object;
+package com.junzixiehui.jvm.object;
 
 import lombok.Data;
 

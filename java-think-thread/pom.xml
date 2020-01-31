@@ -30,9 +30,16 @@
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-core</artifactId>
+            <version>1.4.3</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>com.netflix.rxjava</groupId>
+            <artifactId>rxjava-core</artifactId>
+            <version>0.19.0</version>
+        </dependency>
+
+    </dependencies>
 
 
 </project>

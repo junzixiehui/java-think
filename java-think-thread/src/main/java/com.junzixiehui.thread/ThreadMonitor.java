@@ -17,7 +17,7 @@ public class ThreadMonitor {
 			new LinkedBlockingQueue<Runnable>(100000));
 
 	public static void main(String[] args) throws Exception {
-		for (int i = 0; i < 100000; i++) {
+		/*for (int i = 0; i < 100000; i++) {
 			es.execute(() -> {
 				System.out.print(1);
 				try {
@@ -46,7 +46,7 @@ public class ThreadMonitor {
 			System.out.println("总线程数：" + taskCount);
 
 			Thread.sleep(3000);
-		}
+		}*/
 
 	}
 

@@ -1,4 +1,4 @@
-package com.junzixiehui.netty.echo;
+package com.junzixiehui.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -18,11 +18,12 @@ import java.util.Set;
  * @version: 1.0
  */
 public class NioServer {
-	public static void main(String[] args) throws IOException {
-		new NioServer().serve(8080);
+
+	public static void main(String[] args) throws Exception {
+		new NioServer().serve(8888);
 	}
 
-	public void serve(int port) throws IOException {
+	public void serve(int port) throws Exception {
 		ServerSocketChannel serverChannel = ServerSocketChannel.open();
 		serverChannel.configureBlocking(false);
 		ServerSocket ss = serverChannel.socket();
@@ -30,22 +31,25 @@ public class NioServer {
 		ss.bind(address);
 		Selector selector = Selector.open();
 		serverChannel.register(selector, SelectionKey.OP_ACCEPT);
-		final ByteBuffer msg = ByteBuffer.wrap("Hi!\r\n".getBytes());
-		for (; ; ) {
-			selector.select();
+
+		while (selector.select() > 0) {
+
 			Set<SelectionKey> readyKeys = selector.selectedKeys();
+
 			Iterator<SelectionKey> iterator = readyKeys.iterator();
+
 			while (iterator.hasNext()) {
 				SelectionKey key = iterator.next();
-				iterator.remove();
+
 				if (key.isAcceptable()) {
-					ServerSocketChannel server = (ServerSocketChannel) key.channel();
-					SocketChannel client = server.accept();
+					//ServerSocketChannel server = (ServerSocketChannel) key.channel();
+					SocketChannel client = serverChannel.accept();
 					client.configureBlocking(false);
-					client.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ, msg.duplicate());
+					client.register(selector, SelectionKey.OP_READ);
 					System.out.println("Accepted connection from " + client);
-				}
-				if (key.isWritable()) {
+
+					sayHello(client);
+				} else if (key.isWritable()) {
 					SocketChannel client = (SocketChannel) key.channel();
 					ByteBuffer buffer = (ByteBuffer) key.attachment();
 					while (buffer.hasRemaining()) {
@@ -54,10 +58,29 @@ public class NioServer {
 						}
 					}
 					client.close();
+				} else if (key.isReadable()){
+					SocketChannel clientChannel = (SocketChannel) key.channel();
+					ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+
+					int len = 0;
+					while ((len = clientChannel.read(byteBuffer)) != -1){
+						byteBuffer.flip();
+						System.out.println(new String(byteBuffer.array(),0,len));
+						byteBuffer.clear();
+					}
+					clientChannel.close();
+
 				}
+				iterator.remove();
 			}
 		}
 	}
 
-
+	final static ByteBuffer buffer = ByteBuffer.allocate(1024);
+	private static void sayHello(SocketChannel channel) throws Exception {
+		buffer.clear();
+		buffer.put("Hi there!\r\n".getBytes());
+		buffer.flip();
+		channel.write(buffer);
+	}
 }
