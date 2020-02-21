@@ -17,6 +17,7 @@ public class ThreadMonitor {
 			new LinkedBlockingQueue<Runnable>(100000));
 
 	public static void main(String[] args) throws Exception {
+
 		/*for (int i = 0; i < 100000; i++) {
 			es.execute(() -> {
 				System.out.print(1);
@@ -49,5 +50,4 @@ public class ThreadMonitor {
 		}*/
 
 	}
-
 }
