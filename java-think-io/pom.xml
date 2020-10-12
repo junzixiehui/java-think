@@ -9,13 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>java-think-jvm</artifactId>
-    
+    <artifactId>java-think-io</artifactId>
+
+
+
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
         <dependency>
-            <groupId>org.openjdk.jol</groupId>
-            <artifactId>jol-core</artifactId>
-            <version>0.9</version>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.0.Final</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
+
+
 </project>

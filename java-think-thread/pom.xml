@@ -21,13 +21,30 @@
             <artifactId>guava</artifactId>
         </dependency>
 
+
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-core</artifactId>
-            <version>1.5.18</version>
+            <version>1.4.3</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>com.netflix.rxjava</groupId>
+            <artifactId>rxjava-core</artifactId>
+            <version>0.19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vip.vjtools</groupId>
+            <artifactId>vjkit</artifactId>
+        </dependency>
+
+    </dependencies>
 
 
 </project>

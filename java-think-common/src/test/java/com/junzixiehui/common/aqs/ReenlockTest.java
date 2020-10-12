@@ -15,6 +15,8 @@ public class ReenlockTest {
     private static ReentrantLock lock = new ReentrantLock();
 
     public static void main(String[] args) {
+
+    	lock.lock();
       /*  for (int i = 0; i < 5; i++) {
             Thread thread = new Thread(() -> {
                 lock.lock();

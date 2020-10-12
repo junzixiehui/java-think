@@ -1,47 +1,51 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.junzixiehui</groupId>
-  <artifactId>java-think</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>java-think-thread</module>
-    <module>java-think-common</module>
-      <module>interview</module>
-      <module>java-think-utils</module>
-      <module>algorithm</module>
-      <module>java-think-collection</module>
-      <module>java-think-design</module>
-      <module>java-think-jvm</module>
-      <module>java-think-flink</module>
-      <module>java-think-file</module>
-  </modules>
-  <name>java-think Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.junzixiehui</groupId>
+    <artifactId>java-think</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>java-think-thread</module>
+        <module>java-think-common</module>
+        <module>interview</module>
+        <module>java-think-utils</module>
+        <module>algorithm</module>
+        <module>java-think-collection</module>
+        <module>java-think-design</module>
+        <module>java-think-io</module>
+        <module>agent</module>
+        <module>java-think-jvm</module>
+        <module>java-think-flink</module>
+        <module>java-think-file</module>
+    </modules>
+    <name>java-think Maven Webapp</name>
+    <url>http://maven.apache.org</url>
 
 
-  <properties>
-    <file_encoding>UTF-8</file_encoding>
-    <sonar.host.url>http://121.199.22.223:9002</sonar.host.url>
-    <!-- jar包版本定义 -->
-    <guava.version>18.0</guava.version>
-    <!-- 租房研发部公共包 -->
-    <rent-common.version>5.5.8.1</rent-common.version>
+    <properties>
+        <file_encoding>UTF-8</file_encoding>
+        <sonar.host.url>http://121.199.22.223:9002</sonar.host.url>
+        <!-- jar包版本定义 -->
+        <guava.version>18.0</guava.version>
+        <!-- 租房研发部公共包 -->
+        <rent-common.version>5.5.8.1</rent-common.version>
 
-    <mysql-connector.version>5.1.38</mysql-connector.version>
+        <mysql-connector.version>5.1.38</mysql-connector.version>
+        <java.version>1.8</java.version>
 
-
-    <!-- Maven插件版本定义 apache-maven-3.3.3版本默认版本插件版本 -->
-    <maven_source_plugin_version>2.6</maven_source_plugin_version>
-    <maven_compiler_plugin_version>3.1</maven_compiler_plugin_version>
-    <maven_jar_plugin_version>2.4</maven_jar_plugin_version>
-    <maven_war_plugin_version>2.2</maven_war_plugin_version>
-    <maven_install_plugin_version>2.4</maven_install_plugin_version>
-    <maven_deploy_plugin_version>2.7</maven_deploy_plugin_version>
-    <maven-surefire-plugin_version>2.12.4</maven-surefire-plugin_version>
-    <elastic-job-spring_version>1.1.1</elastic-job-spring_version>
-  </properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Maven插件版本定义 apache-maven-3.3.3版本默认版本插件版本 -->
+        <maven_source_plugin_version>2.6</maven_source_plugin_version>
+        <maven_compiler_plugin_version>3.1</maven_compiler_plugin_version>
+        <maven_jar_plugin_version>2.4</maven_jar_plugin_version>
+        <maven_war_plugin_version>2.2</maven_war_plugin_version>
+        <maven_install_plugin_version>2.4</maven_install_plugin_version>
+        <maven_deploy_plugin_version>2.7</maven_deploy_plugin_version>
+        <maven-surefire-plugin_version>2.12.4</maven-surefire-plugin_version>
+        <elastic-job-spring_version>1.1.1</elastic-job-spring_version>
+    </properties>
 
 
     <repositories>
@@ -54,183 +58,187 @@
 
 
     <dependencyManagement>
-    <dependencies>
+        <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.3.2</version>
-        </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>1.3.2</version>
+            </dependency>
 
+            <dependency>
+                <groupId>com.vip.vjtools</groupId>
+                <artifactId>vjkit</artifactId>
+                <version>1.0.5</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.vip.vjtools</groupId>
-            <artifactId>vjkit</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-      <!-- guava -->
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
-      </dependency>
-      <!-- common-utils -->
-
-
-      <!-- mysql -->
-      <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>${mysql-connector.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.javassist</groupId>
-        <artifactId>javassist</artifactId>
-        <version>3.18.1-GA</version>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.alibaba.rocketmq</groupId>
-        <artifactId>rocketmq-client</artifactId>
-        <version>3.4.6</version>
-      </dependency>
-      <!-- oracle驱动 -->
-      <dependency>
-        <groupId>ojdbc</groupId>
-        <artifactId>ojdbc</artifactId>
-        <version>14</version>
-      </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-        <scope>test</scope>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-      <dependency>
-        <groupId>org.apache.poi</groupId>
-        <artifactId>poi</artifactId>
-        <version>3.11</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.poi</groupId>
-        <artifactId>poi-ooxml</artifactId>
-        <version>3.11</version>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.groovy</groupId>
-        <artifactId>groovy-all</artifactId>
-        <version>2.3.2</version>
-        <classifier>indy</classifier>
-      </dependency>
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!-- common-utils -->
 
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.4</version>
-            <scope>test</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.1</version>
-        </dependency>
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.18.1-GA</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>3.4.6</version>
+            </dependency>
+            <!-- oracle驱动 -->
+            <dependency>
+                <groupId>ojdbc</groupId>
+                <artifactId>ojdbc</artifactId>
+                <version>14</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>3.11</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>3.11</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>2.3.2</version>
+                <classifier>indy</classifier>
+            </dependency>
 
 
-    </dependencies>
-  </dependencyManagement>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>6.4</version>
+                <scope>test</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <scope>test</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.1</version>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-core</artifactId>
+                <version>3.0.5.RELEASE</version>
+            </dependency>
 
 
-  <build>
-    <finalName>java-think</finalName>
-
-      <plugins>
-          <plugin>
-              <groupId>org.sonarsource.scanner.maven</groupId>
-              <artifactId>sonar-maven-plugin</artifactId>
-              <version>3.3.0.603</version>
-          </plugin>
+        </dependencies>
+    </dependencyManagement>
 
 
-         <!-- <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>cobertura-maven-plugin</artifactId>
-              <version>2.7</version>
-              <configuration>
-                  <formats>
-                      <format>xml</format>
-                  </formats>
-              </configuration>
-              <executions>
-                  <execution>
-                      <phase>package</phase>
-                      <goals>
-                          <goal>cobertura</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>-->
+    <build>
+        <finalName>java-think</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.3.0.603</version>
+            </plugin>
 
 
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-surefire-plugin</artifactId>
-              <version>2.5</version>
-              <configuration>
-                  <skipTests>false</skipTests>
-                  <argLine>${argLine} -Dfile.encoding=UTF-8</argLine>
-              </configuration>
-          </plugin>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-deploy-plugin</artifactId>
-              <configuration>
-                  <skip>false</skip>
-              </configuration>
-          </plugin>
-          <plugin>
-              <groupId>org.jacoco</groupId>
-              <artifactId>jacoco-maven-plugin</artifactId>
-              <version>0.8.1</version>
-              <configuration>
-                  <skip>false</skip>
-              </configuration>
-              <executions>
-                  <execution>
-                      <goals>
-                          <goal>prepare-agent</goal>
-                      </goals>
-                  </execution>
-                  <execution>
-                      <configuration>
-                          <outputDirectory>${basedir}/target/coverage-reports</outputDirectory>
-                      </configuration>
-                      <id>report</id>
-                      <phase>test</phase>
-                      <goals>
-                          <goal>report</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
+            <!-- <plugin>
+                 <groupId>org.codehaus.mojo</groupId>
+                 <artifactId>cobertura-maven-plugin</artifactId>
+                 <version>2.7</version>
+                 <configuration>
+                     <formats>
+                         <format>xml</format>
+                     </formats>
+                 </configuration>
+                 <executions>
+                     <execution>
+                         <phase>package</phase>
+                         <goals>
+                             <goal>cobertura</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+             </plugin>-->
 
-      </plugins>
-  </build>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <skipTests>false</skipTests>
+                    <argLine>${argLine} -Dfile.encoding=UTF-8</argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.1</version>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/coverage-reports</outputDirectory>
+                        </configuration>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 
 
 </project>
