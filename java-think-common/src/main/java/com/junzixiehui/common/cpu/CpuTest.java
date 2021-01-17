@@ -12,9 +12,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CpuTest {
 
 	public static void main(String[] args) throws Exception{
-		Map<String, String> map = new ConcurrentHashMap<>();
-		map.computeIfAbsent("AaAa",
-				key -> map.computeIfAbsent("BBBB", key2 -> "value"));
 	}
 
 }
