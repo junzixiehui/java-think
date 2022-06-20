@@ -31,7 +31,7 @@
         <!-- 租房研发部公共包 -->
         <rent-common.version>5.5.8.1</rent-common.version>
 
-        <mysql-connector.version>5.1.38</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <java.version>1.8</java.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
